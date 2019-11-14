@@ -25,7 +25,7 @@ SECRET_KEY = 'f1&8d$pt)1q36%0nv=4_+a7o3%wl8yo2_^*qt-39(s=6si6+ze'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ 'fbbbbb.herokuapp.com']
+ALLOWED_HOSTS = [ 'fbbbbb.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -76,8 +76,11 @@ WSGI_APPLICATION = 'facebook.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'fb',
+        'USER':'root',
+        'PASSWORD':'',
+        'HOST':'localhost'
     }
 }
 
