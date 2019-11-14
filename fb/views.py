@@ -5,7 +5,7 @@ from django.http import HttpResponse
 def fn_login(request):
     return render(request,'facebookHomePage.html')
 def fn_register(req):
-    fname=req.POST['firstname']
+    fname=req.POST['finame']
     lname=req.POST['lastname']
     mobile=req.POST['mobile']
     passw=req.POST['password']
@@ -16,7 +16,7 @@ def fn_register(req):
         login_obj=Login(email=mobile,password=passw)
         login_obj.save()
         if login_obj.id>0:
-            register_obj=Register(firstname=fname,surname=lname,birthday=dob,gender=gender,fk_login=login_obj)
+            register_obj=Register(firstnam=fname,surname=lname,birthday=dob,gender=gender,fk_login=login_obj)
             register_obj.save()
             if register_obj.id>0:
                 return HttpResponse('success')
